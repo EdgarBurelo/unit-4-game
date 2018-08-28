@@ -121,6 +121,7 @@ var gameStWrs = {
                 }
             });
             
+            
         } else {
             //Put it in DOM
             //console.log("there is no Character defending area");
