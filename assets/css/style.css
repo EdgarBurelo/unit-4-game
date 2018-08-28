@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'StarWarsFont';
+    src: url('./font/Starjedi.ttf');
+    /* src: url('FileName.eot?#iefix') format('embedded-opentype'),
+         url('FileName.woff') format('woff'),
+         url('FileName.ttf') format('truetype'),
+         url('FileName.svg#FontName') format('svg'); */
+    font-style: normal;
+    font-weight: normal;
+}
+
+html, body{
+    height: 100%;
+    font-family: "StarWarsFont";
+}
+
+body {
+    background-image: url("../images/star-wars-wallpaper.jpg");
+    background-repeat: cover;
+    background-size: auto;
+}
+
+.content {
+    flex: 1 0 auto;
+    padding: 0 10px;
+    
+}
+
+.imgContainer {
+    background: #ffffff;
+    padding: 0 15px;
+    text-align: center;
+    border: 2px solid black;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.img {
+    width: 100%;
+    height: auto;
+}
+
+.white{
+    color: #ffffff;
+}
+
+.enemies{
+    background: red;
+}
+
+.defender{
+    background: black;
+    color: #ffffff;
+}
+
