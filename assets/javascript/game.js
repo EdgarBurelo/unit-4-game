@@ -7,10 +7,12 @@ var characterS = {
     "characterStatus":"", //dead, defend, attack
     "attackFunction": function(charaterAttacked) {
         charaterAttacked.healthPoints = charaterAttacked.healthPoints - this.attackPower;
+        $("#gameStatus").html("You attacked "+charaterAttacked.characterName + " for "+ this.attackPower+" damage.<br>");
         this.attackPower = this.attackPower + 10;
         //show healthpoints in dom
         //console.log("#health"+charaterAttacked.characterName);
         $("#health"+charaterAttacked.characterName).html(charaterAttacked.healthPoints);
+        
         
     },
     "dieFunction": function(player) {
@@ -23,6 +25,7 @@ var characterS = {
             att.healthPoints = att.healthPoints - dff.counterAttackPower;
             //Show Healthpoints in dom
             $("#health"+att.characterName).html(att.healthPoints);
+            $("#gameStatus2").text(dff.characterName + " attacked yo back with "+ dff.counterAttackPower+" damage");
         }
     }
 };
@@ -86,6 +89,7 @@ var gameStWrs = {
     "characterDefend": function(defender) {
         if(!gameStWrs.defenderFalg && gameStWrs.characterSelFlag && defender.characterStatus != "dead" && defender.characterType != "Player1") {
             $("#gameStatus").html("");
+            $("#gameStatus2").html("");
             defender.characterStatus = "defend";
             gameStWrs.defenderFalg = true;
             $("#"+defender.characterName).remove();
@@ -98,6 +102,7 @@ var gameStWrs = {
         var attacker;
         var defender;
         $("#gameStatus").html("");
+        $("#gameStatus2").html("");
         if (gameStWrs.defenderFalg && !gameStWrs.winFlag && !gameStWrs.loseFlag) {
             $(gameStWrs.characters).each(function(index, element) {
                 attacker = element.name;
